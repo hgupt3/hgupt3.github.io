@@ -3,7 +3,7 @@
   font-family: 'Lato';
   font-style: italic;
   font-weight: 400;
-  src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAUi-qNiXg7eU0.woff2) format('woff2');
+  src: local('Lato Italic'), local('Lato-Italic'), url(assets/fonts/lato/lato-italic-400-latin-ext.woff2) format('woff2');
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
@@ -11,7 +11,7 @@
   font-family: 'Lato';
   font-style: italic;
   font-weight: 400;
-  src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAXC-qNiXg7Q.woff2) format('woff2');
+  src: local('Lato Italic'), local('Lato-Italic'), url(assets/fonts/lato/lato-italic-400-latin.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* latin-ext */
@@ -19,7 +19,7 @@
   font-family: 'Lato';
   font-style: italic;
   font-weight: 700;
-  src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_FQftx9897sxZ.woff2) format('woff2');
+  src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(assets/fonts/lato/lato-italic-700-latin-ext.woff2) format('woff2');
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
@@ -27,7 +27,7 @@
   font-family: 'Lato';
   font-style: italic;
   font-weight: 700;
-  src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_Gwftx9897g.woff2) format('woff2');
+  src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(assets/fonts/lato/lato-italic-700-latin.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* latin-ext */
@@ -35,7 +35,7 @@
   font-family: 'Lato';
   font-style: normal;
   font-weight: 400;
-  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjxAwXiWtFCfQ7A.woff2) format('woff2');
+  src: local('Lato Regular'), local('Lato-Regular'), url(assets/fonts/lato/lato-normal-400-latin-ext.woff2) format('woff2');
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
@@ -43,7 +43,7 @@
   font-family: 'Lato';
   font-style: normal;
   font-weight: 400;
-  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format('woff2');
+  src: local('Lato Regular'), local('Lato-Regular'), url(assets/fonts/lato/lato-normal-400-latin.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* latin-ext */
@@ -51,7 +51,7 @@
   font-family: 'Lato';
   font-style: normal;
   font-weight: 700;
-  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwaPGQ3q5d0N7w.woff2) format('woff2');
+  src: local('Lato Bold'), local('Lato-Bold'), url(assets/fonts/lato/lato-normal-700-latin-ext.woff2) format('woff2');
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
@@ -59,7 +59,7 @@
   font-family: 'Lato';
   font-style: normal;
   font-weight: 700;
-  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2) format('woff2');
+  src: local('Lato Bold'), local('Lato-Bold'), url(assets/fonts/lato/lato-normal-700-latin.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -72,6 +72,155 @@ a:focus,
 a:hover {
   color: #f09228;
   text-decoration: none;
+}
+
+.page-table {
+  border: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+  width: 100%;
+}
+
+.content-table {
+  border: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.page-cell {
+  padding: 0;
+}
+
+.intro-copy {
+  padding: 2.5%;
+  vertical-align: middle;
+  width: 63%;
+}
+
+.intro-photo-cell {
+  max-width: 37%;
+  padding: 2.5%;
+  width: 37%;
+}
+
+.profile-photo {
+  border-radius: 6px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  object-fit: cover;
+  width: 80%;
+}
+
+.updated {
+  color: #666;
+  font-size: 0.9em;
+  margin-bottom: 20px;
+  margin-top: 3px;
+  text-align: center;
+}
+
+.contact-cell {
+  padding: 0 2.5% 18px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.contact-links {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35em;
+  justify-content: center;
+  text-align: center;
+}
+
+.contact-link,
+.resource-link {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.32em;
+  white-space: nowrap;
+}
+
+.contact-link i,
+.resource-link i {
+  font-size: 0.95em;
+  line-height: 1;
+}
+
+.contact-separator {
+  color: #777;
+}
+
+.section-cell {
+  padding: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.research-media {
+  padding: 16px;
+  vertical-align: middle;
+  width: 35%;
+}
+
+.research-copy {
+  padding: 8px;
+  vertical-align: middle;
+  width: 65%;
+}
+
+.research-video {
+  border-radius: 10px;
+  width: 85%;
+}
+
+.note-cell {
+  padding: 16px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.equal-note {
+  font-size: small;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .intro-copy,
+  .intro-photo-cell {
+    padding: 2%;
+  }
+
+  .profile-photo {
+    width: 88%;
+  }
+
+  .section-cell,
+  .research-copy {
+    padding: 6px;
+  }
+
+  .research-media {
+    padding: 8px 6px;
+    width: 32%;
+  }
+
+  .research-copy {
+    width: 68%;
+  }
+
+  .research-video {
+    width: 100%;
+  }
 }
 
 body,
@@ -93,7 +242,7 @@ h2 {
   margin: 0;
   font-weight: normal;
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .papertitle {
@@ -103,10 +252,22 @@ h2 {
 }
 
 .name {
+  align-items: center;
+  display: flex;
   padding-top: 20px;
+  gap: 0.24em;
+  justify-content: center;
   margin: 0;
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 32px;
+  font-size: 28px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.name-flag {
+  display: block;
+  height: 0.72em;
+  width: auto;
 }
 
 .one {
@@ -128,10 +289,6 @@ h2 {
   transition: opacity .2s ease-in-out;
   -moz-transition: opacity .2s ease-in-out;
   -webkit-transition: opacity .2s ease-in-out;
-}
-
-span.highlight {
-  background-color: #ffffd0;
 }
 
 .colored-box {
