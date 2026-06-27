@@ -88,22 +88,23 @@
                     </p>
                     <p>
                       I'm a graduate student at <a href="https://www.stanford.edu/" target="_blank" rel="noopener noreferrer">Stanford</a>, pursuing an M.S. in Computer Science.
-                      <!-- I work with <a href="https://shurans.github.io/" target="_blank" rel="noopener noreferrer">Prof. Shuran Song</a> at the <a href="https://real.stanford.edu/" target="_blank" rel="noopener noreferrer">REAL Lab</a> on dexterous manipulation. -->
+                      I work with <a href="https://shurans.github.io/" target="_blank" rel="noopener noreferrer">Prof. Shuran Song</a> at the <a href="https://real.stanford.edu/" target="_blank" rel="noopener noreferrer">REALab</a> on dexterous manipulation and world models.
                     </p>
                     <p>
                       Previously I did my B.S. in Computer Engineering at <a href="https://illinois.edu/" target="_blank" rel="noopener noreferrer">UIUC</a>, where I worked with <a href="https://siebelschool.illinois.edu/about/people/all-faculty/yuanwz" target="_blank" rel="noopener noreferrer">Prof. Wenzhen Yuan</a> and <a href="https://www.gshi.me/" target="_blank" rel="noopener noreferrer">Prof. Guanya Shi</a> (at <a href="https://www.cmu.edu/" target="_blank" rel="noopener noreferrer">CMU</a>) across tactile sensing, cross-embodied learning, and robot manipulation.
                     </p>
 	                  </td>
 	                  <td class="intro-photo-cell">
-		                    <a href="images/pfp.jpg" aria-label="Open profile photo">
-		                      <img alt="Harsh Gupta profile photo" src="images/pfp.jpg" class="profile-photo hoverZoomLink">
-	                    </a>
+	                    <img alt="Harsh Gupta profile photo" src="images/pfp.jpg" class="profile-photo hoverZoomLink">
 	                  </td>
 	                </tr>
 	                <tr>
 	                  <td class="contact-cell" colspan="2">
 	                    <p class="contact-links">
-	                      <span class="contact-link" aria-label="Email: harshgupta at stanford dot edu"><i class="fa-solid fa-envelope" aria-hidden="true"></i><span>harshgupta [at] stanford [dot] edu</span></span>
+	                      <button class="contact-link contact-email-toggle" type="button" aria-expanded="false" aria-controls="contact-email-address"><i class="fa-solid fa-envelope" aria-hidden="true"></i><span class="email-toggle-label">Email</span></button>
+	                      <span class="contact-email-address" id="contact-email-address" hidden>harshgupta [at] stanford [dot] edu</span>
+	                      <span class="contact-separator">/</span>
+	                      <a class="contact-link" href="resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Harsh Gupta resume"><i class="fa-solid fa-file-lines" aria-hidden="true"></i><span>Resume</span></a>
 	                      <span class="contact-separator">/</span>
 	                      <a class="contact-link" href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=VDjwNWcAAAAJ" target="_blank" rel="noopener noreferrer" aria-label="Harsh Gupta on Google Scholar"><i class="fa-brands fa-google-scholar" aria-hidden="true"></i><span>Scholar</span></a>
 	                      <span class="contact-separator">/</span>
@@ -135,10 +136,12 @@
               <tbody>
                 <tr>
                   <td class="research-media">
-                    <video class="research-video" muted autoplay loop playsinline aria-label="LUCID preview video">
-                      <source src="images/lucid.mp4" type="video/mp4">
-                      Your browser does not support the video tag.
-                    </video>
+                    <a href="https://lucid-robot.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Open LUCID webpage">
+                      <video class="research-video" muted autoplay loop playsinline aria-label="LUCID preview video">
+                        <source src="images/lucid.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                    </a>
                   </td>
                   <td class="research-copy">
                     <a href="https://lucid-robot.github.io/" target="_blank" rel="noopener noreferrer">
@@ -162,10 +165,12 @@
               <tbody>
                 <tr>
                   <td class="research-media">
+                    <a href="https://umi-on-air.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Open UMI-on-Air webpage">
                       <video class="research-video" muted autoplay loop playsinline aria-label="UMI-on-Air preview video">
                         <source src="images/umi-on-air.mp4?v=hero" type="video/mp4">
                         Your browser does not support the video tag.
                       </video>
+                    </a>
                   </td>
                   <td class="research-copy">
                     <a href="https://umi-on-air.github.io/" target="_blank" rel="noopener noreferrer">
@@ -208,5 +213,25 @@
         </tr>
       </tbody>
     </table>
+    <script>
+      (function () {
+        var emailToggle = document.querySelector('.contact-email-toggle');
+        var emailAddress = document.querySelector('.contact-email-address');
+        var emailLabel = document.querySelector('.email-toggle-label');
+
+        if (!emailToggle || !emailAddress || !emailLabel) {
+          return;
+        }
+
+        emailToggle.addEventListener('click', function () {
+          var isExpanded = emailToggle.getAttribute('aria-expanded') === 'true';
+          var shouldExpand = !isExpanded;
+
+          emailToggle.setAttribute('aria-expanded', String(shouldExpand));
+          emailLabel.textContent = shouldExpand ? 'Email:' : 'Email';
+          emailAddress.hidden = !shouldExpand;
+        });
+      })();
+    </script>
   </body>
 </html>
