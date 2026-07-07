@@ -107,9 +107,11 @@
 	                      </span>
 	                      <span class="contact-separator">/</span>
 	                      <a class="contact-link" href="resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Harsh Gupta resume"><i class="fa-solid fa-file-lines" aria-hidden="true"></i><span>Resume</span></a>
-	                      <span class="contact-separator">/</span>
+	                      <span class="contact-separator contact-expanded-wrap-separator">/</span>
+	                      <span class="contact-expanded-line-break" aria-hidden="true"></span>
 	                      <a class="contact-link" href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=VDjwNWcAAAAJ" target="_blank" rel="noopener noreferrer" aria-label="Harsh Gupta on Google Scholar"><i class="fa-brands fa-google-scholar" aria-hidden="true"></i><span>Scholar</span></a>
-	                      <span class="contact-separator">/</span>
+	                      <span class="contact-separator contact-wrap-separator">/</span>
+	                      <span class="contact-line-break" aria-hidden="true"></span>
 	                      <a class="contact-link" href="https://linkedin.com/in/hgupt3" target="_blank" rel="noopener noreferrer" aria-label="Harsh Gupta on LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a>
 	                      <span class="contact-separator">/</span>
 	                      <a class="contact-link" href="https://github.com/hgupt3/" target="_blank" rel="noopener noreferrer" aria-label="Harsh Gupta on Github"><i class="fa-brands fa-github" aria-hidden="true"></i><span>Github</span></a>
@@ -257,6 +259,7 @@
           emailToggle.setAttribute('aria-expanded', String(shouldExpand));
           emailLabel.textContent = shouldExpand ? 'Email:' : 'Email';
           emailAddress.hidden = !shouldExpand;
+          contactLinks.classList.toggle('is-email-expanded', shouldExpand);
           window.requestAnimationFrame(updateContactBalance);
         });
 

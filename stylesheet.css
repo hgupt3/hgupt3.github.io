@@ -199,16 +199,46 @@ a:focus-visible {
   color: #777;
 }
 
+.contact-line-break {
+  display: none;
+}
+
+.contact-expanded-line-break {
+  display: none;
+}
+
 .contact-links.is-balanced {
-  column-gap: 1.2em;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  justify-items: center;
   row-gap: 0.35em;
 }
 
-.contact-links.is-balanced .contact-separator {
+.contact-links.is-balanced .contact-wrap-separator {
   display: none;
+}
+
+.contact-links.is-balanced .contact-line-break {
+  display: block;
+  flex-basis: 100%;
+  height: 0;
+  width: 100%;
+}
+
+.contact-links.is-balanced.is-email-expanded .contact-wrap-separator {
+  display: inline;
+}
+
+.contact-links.is-balanced.is-email-expanded .contact-line-break {
+  display: none;
+}
+
+.contact-links.is-balanced.is-email-expanded .contact-expanded-wrap-separator {
+  display: none;
+}
+
+.contact-links.is-balanced.is-email-expanded .contact-expanded-line-break {
+  display: block;
+  flex-basis: 100%;
+  height: 0;
+  width: 100%;
 }
 
 .contact-links.is-balanced .contact-email {
@@ -283,6 +313,17 @@ a:focus-visible {
 
   .research-video {
     width: 100%;
+  }
+}
+
+@media (max-width: 340px) {
+  .contact-links.is-balanced.is-email-expanded {
+    gap: 0.2em;
+  }
+
+  .contact-links.is-balanced.is-email-expanded,
+  .contact-links.is-balanced.is-email-expanded * {
+    font-size: 11px;
   }
 }
 
