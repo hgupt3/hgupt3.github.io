@@ -101,8 +101,10 @@
 	                <tr>
 	                  <td class="contact-cell" colspan="2">
 	                    <p class="contact-links">
-	                      <button class="contact-link contact-email-toggle" type="button" aria-expanded="false" aria-controls="contact-email-address"><i class="fa-solid fa-envelope" aria-hidden="true"></i><span class="email-toggle-label">Email</span></button>
-	                      <span class="contact-email-address" id="contact-email-address" hidden>harshgupta [at] stanford [dot] edu</span>
+	                      <span class="contact-email">
+	                        <button class="contact-link contact-email-toggle" type="button" aria-expanded="false" aria-controls="contact-email-address"><i class="fa-solid fa-envelope" aria-hidden="true"></i><span class="email-toggle-label">Email</span></button>
+	                        <span class="contact-email-address" id="contact-email-address" hidden>harshgupta [at] stanford [dot] edu</span>
+	                      </span>
 	                      <span class="contact-separator">/</span>
 	                      <a class="contact-link" href="resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Harsh Gupta resume"><i class="fa-solid fa-file-lines" aria-hidden="true"></i><span>Resume</span></a>
 	                      <span class="contact-separator">/</span>
@@ -215,11 +217,36 @@
     </table>
     <script>
       (function () {
+        var contactLinks = document.querySelector('.contact-links');
         var emailToggle = document.querySelector('.contact-email-toggle');
         var emailAddress = document.querySelector('.contact-email-address');
         var emailLabel = document.querySelector('.email-toggle-label');
 
+        function updateContactBalance() {
+          if (!contactLinks) {
+            return;
+          }
+
+          contactLinks.classList.remove('is-balanced');
+
+          var items = Array.prototype.slice.call(contactLinks.children).filter(function (item) {
+            return !item.hidden && window.getComputedStyle(item).display !== 'none';
+          });
+
+          if (items.length < 2) {
+            return;
+          }
+
+          var firstTop = items[0].offsetTop;
+          var wraps = items.some(function (item) {
+            return Math.abs(item.offsetTop - firstTop) > 2;
+          });
+
+          contactLinks.classList.toggle('is-balanced', wraps);
+        }
+
         if (!emailToggle || !emailAddress || !emailLabel) {
+          updateContactBalance();
           return;
         }
 
@@ -230,7 +257,15 @@
           emailToggle.setAttribute('aria-expanded', String(shouldExpand));
           emailLabel.textContent = shouldExpand ? 'Email:' : 'Email';
           emailAddress.hidden = !shouldExpand;
+          window.requestAnimationFrame(updateContactBalance);
         });
+
+        window.addEventListener('resize', updateContactBalance);
+        updateContactBalance();
+
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(updateContactBalance);
+        }
       })();
     </script>
   </body>

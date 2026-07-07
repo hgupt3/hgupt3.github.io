@@ -164,6 +164,13 @@ a:focus-visible {
   line-height: 1;
 }
 
+.contact-email {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.32em;
+  white-space: nowrap;
+}
+
 .contact-email-toggle {
   background: none;
   border: 0;
@@ -190,6 +197,30 @@ a:focus-visible {
 
 .contact-separator {
   color: #777;
+}
+
+.contact-links.is-balanced {
+  column-gap: 1.2em;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-items: center;
+  row-gap: 0.35em;
+}
+
+.contact-links.is-balanced .contact-separator {
+  display: none;
+}
+
+.contact-links.is-balanced .contact-email {
+  flex-wrap: wrap;
+  justify-content: center;
+  min-width: 0;
+  white-space: normal;
+}
+
+.contact-links.is-balanced .contact-email-address {
+  overflow-wrap: anywhere;
+  white-space: normal;
 }
 
 .section-cell {
