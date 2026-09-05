@@ -87,9 +87,11 @@ a {
   display: none !important;
 }
 
-a:hover {
-  color: var(--link-hover-color);
-  text-decoration: none;
+@media (hover: hover) and (pointer: fine) {
+  a:hover {
+    color: var(--link-hover-color);
+    text-decoration: none;
+  }
 }
 
 a:focus-visible {
@@ -203,8 +205,10 @@ a:focus-visible {
   padding: 0;
 }
 
-.contact-email-toggle:hover {
-  color: var(--link-hover-color);
+@media (hover: hover) and (pointer: fine) {
+  .contact-email-toggle:hover {
+    color: var(--link-hover-color);
+  }
 }
 
 .contact-email-toggle:focus-visible {
@@ -403,7 +407,6 @@ h2 {
   color: var(--link-color);
 }
 
-.previously summary:hover,
 .previously summary:focus-visible {
   color: var(--link-hover-color);
 }
@@ -581,8 +584,10 @@ body {
   padding: 4px 0;
 }
 
-.contact-link:hover {
-  color: var(--link-hover-color);
+@media (hover: hover) and (pointer: fine) {
+  .contact-link:hover {
+    color: var(--link-hover-color);
+  }
 }
 
 .contact-cell {
@@ -701,7 +706,7 @@ body {
 
 /* Compact version of the desktop composition on narrow screens. */
 @media (max-width: 640px) {
-  body { padding: 48px 0 24px; }
+  body { padding: 48px 0 96px; }
   .page-table { width: calc(100% - 24px); }
   .intro-copy { width: 60%; padding: 2%; }
   .intro-photo-cell { width: 40%; max-width: none; padding: 2%; }
@@ -804,9 +809,7 @@ p a:not(.contact-link):not(.resource-link),
   transition: color 160ms ease, text-decoration-color 180ms ease;
 }
 
-p a:not(.contact-link):not(.resource-link):hover,
 p a:not(.contact-link):not(.resource-link):focus-visible,
-.research-copy > a:not(.resource-link):hover,
 .research-copy > a:not(.resource-link):focus-visible {
   text-decoration-color: currentColor;
 }
@@ -816,5 +819,14 @@ p a:not(.contact-link):not(.resource-link):focus-visible,
     border-top: 1px solid #e4e9ed;
     padding-top: 20px;
     margin-top: 20px;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .previously summary:hover { color: var(--link-hover-color); }
+
+  p a:not(.contact-link):not(.resource-link):hover,
+  .research-copy > a:not(.resource-link):hover {
+    text-decoration-color: currentColor;
   }
 }
