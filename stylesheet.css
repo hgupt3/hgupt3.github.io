@@ -1,3 +1,14 @@
+:root {
+  color-scheme: light;
+  --page-color: #fff;
+  --canvas-color: #f9fafb;
+  --text-color: #111;
+  --muted-color: #666;
+  --grid-color: #b8c3d0;
+  --link-color: #476b91;
+  --link-hover-color: #176bc0;
+}
+
 /* latin-ext */
 @font-face {
   font-family: 'Lato';
@@ -63,8 +74,12 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 a {
-  color: #1772d0;
+  color: var(--link-color);
   text-decoration: none;
 }
 
@@ -73,12 +88,12 @@ a {
 }
 
 a:hover {
-  color: #f09228;
+  color: var(--link-hover-color);
   text-decoration: none;
 }
 
 a:focus-visible {
-  outline: 1px dotted #1772d0;
+  outline: 1px dotted var(--link-color);
   outline-offset: 2px;
 }
 
@@ -105,19 +120,26 @@ a:focus-visible {
   padding: 0;
 }
 
+.intro-table {
+  table-layout: fixed;
+}
+
 .intro-copy {
   padding: 2.5%;
-  vertical-align: middle;
+  vertical-align: top;
   width: 63%;
 }
 
 .intro-photo-cell {
+  vertical-align: top;
   max-width: 37%;
   padding: 2.5%;
   width: 37%;
 }
 
 .profile-photo {
+  height: auto;
+  aspect-ratio: 1;
   border-radius: 6px;
   display: block;
   margin-left: auto;
@@ -128,7 +150,7 @@ a:focus-visible {
 }
 
 .updated {
-  color: #666;
+  color: #858585;
   font-size: 0.9em;
   margin-bottom: 20px;
   margin-top: 3px;
@@ -142,6 +164,7 @@ a:focus-visible {
 }
 
 .contact-links {
+  align-content: flex-start;
   align-items: center;
   display: flex;
   flex-wrap: wrap;
@@ -174,23 +197,23 @@ a:focus-visible {
 .contact-email-toggle {
   background: none;
   border: 0;
-  color: #1772d0;
+  color: var(--link-color);
   cursor: pointer;
   font: inherit;
   padding: 0;
 }
 
 .contact-email-toggle:hover {
-  color: #f09228;
+  color: var(--link-hover-color);
 }
 
 .contact-email-toggle:focus-visible {
-  outline: 1px dotted #1772d0;
+  outline: 1px dotted var(--link-color);
   outline-offset: 2px;
 }
 
 .contact-email-address {
-  color: #111;
+  color: var(--text-color);
   cursor: text;
   white-space: nowrap;
 }
@@ -272,6 +295,8 @@ a:focus-visible {
 }
 
 .research-video {
+  display: block;
+  height: auto;
   border-radius: 10px;
   width: 85%;
 }
@@ -368,10 +393,19 @@ h2 {
   white-space: nowrap;
 }
 
-.name-flag {
-  display: block;
-  height: 0.72em;
-  width: auto;
+.previously {
+  margin: 1em 0;
+}
+
+.previously summary {
+  width: fit-content;
+  cursor: pointer;
+  color: var(--link-color);
+}
+
+.previously summary:hover,
+.previously summary:focus-visible {
+  color: var(--link-hover-color);
 }
 
 .one {
@@ -400,4 +434,387 @@ h2 {
     padding: 20px;
     display: inline-block;
     border-radius: 10px;
+}
+
+/* Short interaction feedback; disclosure height animates only on request. */
+a, .contact-email-toggle, .previously summary {
+  transition: color 140ms ease;
+}
+
+@keyframes reveal-copy {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+.previously .disclosure-panel > p {
+  margin: 0;
+  padding-top: 0.35em;
+}
+
+
+
+@media (hover: hover) and (pointer: fine) {
+  .profile-photo,
+  .research-video {
+    transition: transform 160ms ease-out;
+  }
+
+  .profile-photo:hover,
+  .research-media a:hover .research-video {
+    transform: scale(1.025);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-photo:hover,
+  .research-media a:hover .research-video {
+    transform: none;
+  }
+}
+
+.disclosure-panel {
+  overflow: hidden;
+}
+
+.contact-email-address {
+  text-align: left;
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.contact-email-address > span {
+  display: block;
+  padding: 0;
+}
+
+.previously summary {
+  list-style: none;
+}
+
+.previously summary::-webkit-details-marker {
+  display: none;
+}
+
+.previously summary::before {
+  content: '';
+  display: inline-block;
+  width: 0.35em;
+  height: 0.35em;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(-45deg);
+  transition: transform 220ms ease;
+}
+
+.previously summary::before {
+  margin: 0 0.6em 0 0.1em;
+  vertical-align: 0.1em;
+}
+
+
+.previously summary[aria-expanded='true']::before {
+  transform: rotate(45deg);
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+
+
+  .profile-photo {
+    transition: transform 160ms ease-out, box-shadow 180ms ease-out;
+  }
+
+  .profile-photo:hover {
+    box-shadow: 0 8px 22px rgb(20 40 60 / 16%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+}
+
+.contact-email,
+.contact-links.is-balanced .contact-email {
+  flex-wrap: nowrap;
+  max-width: 100%;
+}
+
+.contact-email-toggle {
+  flex-shrink: 0;
+}
+
+.contact-email-address {
+  flex-shrink: 1;
+}
+
+/* Quiet margins and open, spaced navigation. */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--canvas-color);
+  background-image: radial-gradient(circle, var(--grid-color) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.page-table {
+  margin-top: 28px;
+  margin-bottom: 40px;
+  background: var(--page-color);
+  box-shadow: 0 0 50px 35px var(--page-color);
+}
+
+.contact-links {
+  column-gap: 20px;
+  row-gap: 10px;
+  margin: 8px 0 12px;
+}
+
+.contact-link {
+  color: var(--link-color);
+  padding: 4px 0;
+}
+
+.contact-link:hover {
+  color: var(--link-hover-color);
+}
+
+.contact-cell {
+  padding-bottom: 12px;
+}
+
+.resource-link {
+  margin-right: 12px;
+}
+
+
+
+@media (max-width: 640px) {
+  .page-table {
+    width: calc(100% - 24px);
+    margin-top: 12px;
+    margin-bottom: 24px;
+  }
+
+  .contact-links {
+    column-gap: 15px;
+    margin-top: 4px;
+  }
+}
+
+/* Align every icon/label pair and keep email text on one line during reveal. */
+.contact-link, .resource-link {
+  gap: 0.4em;
+  line-height: 20px;
+  vertical-align: middle;
+  transition: color 160ms ease;
+}
+
+.contact-link i, .resource-link i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 1.1em;
+  width: 1.1em;
+  height: 20px;
+  line-height: 1;
+}
+
+.contact-email {
+  line-height: 20px;
+  gap: 8px;
+}
+
+.contact-email-address, .contact-email-address > span {
+  white-space: nowrap;
+  overflow-wrap: normal;
+  line-height: 20px;
+}
+
+.contact-email-address {
+  flex: 0 0 auto;
+  height: 20px;
+  overflow: hidden;
+}
+
+
+@media (max-width: 640px) {
+  .contact-links.email-expanded .contact-email {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+  .contact-email-address {
+    font-size: clamp(11px, 3.5vw, 14px);
+  }
+}
+
+a, .contact-email-toggle, .previously summary {
+  transition: color 160ms ease;
+}
+
+@media (max-width: 640px) {
+  .contact-links > .contact-link,
+  .contact-links > .contact-email {
+    flex: 0 0 calc((100% - 30px) / 3);
+    justify-content: center;
+  }
+
+  .contact-links.email-expanded > .contact-email {
+    flex-basis: 100%;
+  }
+}
+
+
+/* Tight SVG bounds make the actual shape, rather than font padding, the alignment box. */
+.contact-link, .resource-link {
+  gap: 6px;
+}
+
+.link-icon {
+  display: block;
+  flex: none;
+}
+
+.link-label {
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+/* Keep viewport padding inside the minimum height instead of adding blank scroll. */
+body {
+  display: flow-root;
+  box-sizing: border-box;
+  min-height: 100svh;
+  padding: 48px 0 40px;
+}
+
+.page-table {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Compact version of the desktop composition on narrow screens. */
+@media (max-width: 640px) {
+  body { padding: 48px 0 24px; }
+  .page-table { width: calc(100% - 24px); }
+  .intro-copy { width: 60%; padding: 2%; }
+  .intro-photo-cell { width: 40%; max-width: none; padding: 2%; }
+  .profile-photo { width: 100%; max-width: 160px; }
+  .name { padding-top: 8px; }
+  .updated { margin-bottom: 14px; }
+  .intro-copy > p:not(.name):not(.updated) { line-height: 1.35; }
+  .previously { margin: 10px 0 6px; }
+  .previously .disclosure-panel > p { line-height: 1.35; }
+  .contact-cell { padding: 4px 2% 10px; }
+  .contact-links {
+    max-width: 280px;
+    margin: 8px auto 12px;
+    column-gap: 14px;
+    row-gap: 4px;
+  }
+  .contact-links > .contact-link,
+  .contact-links > .contact-email {
+    flex: 0 0 auto;
+    justify-content: center;
+  }
+  .contact-links.email-expanded > .contact-email { flex-basis: 100%; }
+  .research-media { width: 31%; padding: 10px 6px; }
+  .research-copy { width: 69%; padding: 10px 6px; line-height: 1.35; }
+  .research-video { width: 100%; }
+  .section-cell > p:not(.equal-note) { line-height: 1.35; }
+  .note-cell { padding: 16px 6px 0; }
+}
+
+@media (max-width: 360px) {
+  .name { font-size: 24px; }
+  .contact-links { column-gap: 12px; }
+}
+
+@media (max-width: 640px) {
+  .research-table { margin-top: 16px; }
+  .research-table tbody,
+  .research-table tr,
+  .research-media,
+  .research-copy {
+    display: block;
+    width: auto;
+  }
+
+  .research-media { padding: 0 6px; }
+  .research-video {
+    width: min(100%, 64vw, 280px);
+    margin: 0 auto;
+  }
+  .research-copy { padding: 10px 6px 4px; }
+}
+
+
+body { color: var(--text-color); }
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 20px;
+}
+
+.footer-links p { margin: 14px 0; }
+
+
+
+@media (max-width: 640px) {
+  .updated { font-size: 11.5px; line-height: 1.35; }
+  .research-copy { line-height: 1.4; }
+  .resource-link { padding: 3px 0; }
+  .footer-links { gap: 0 16px; }
+  .footer-links p { margin: 8px 0; }
+}
+
+/* Gently expand icon-and-label links together without changing layout. */
+@media (hover: hover) and (pointer: fine) {
+  .contact-link, .resource-link {
+    transition: color 140ms ease, scale 160ms ease-out;
+  }
+
+  .contact-link:hover, .resource-link:hover {
+    scale: 1.025;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-link:hover, .resource-link:hover {
+    scale: none;
+  }
+}
+
+/* Fade underlines without moving text or changing paragraph wrapping. */
+p a:not(.contact-link):not(.resource-link),
+.research-copy > a:not(.resource-link) {
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 160ms ease, text-decoration-color 180ms ease;
+}
+
+p a:not(.contact-link):not(.resource-link):hover,
+p a:not(.contact-link):not(.resource-link):focus-visible,
+.research-copy > a:not(.resource-link):hover,
+.research-copy > a:not(.resource-link):focus-visible {
+  text-decoration-color: currentColor;
+}
+
+@media (max-width: 640px) {
+  .research-table + .research-table {
+    border-top: 1px solid #e4e9ed;
+    padding-top: 20px;
+    margin-top: 20px;
+  }
 }
