@@ -402,6 +402,8 @@ h2 {
   margin: 0;
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 28px;
+  font-weight: 400;
+  line-height: normal;
   text-align: center;
   white-space: nowrap;
 }
