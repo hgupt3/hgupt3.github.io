@@ -382,6 +382,15 @@ h2 {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 14px;
   font-weight: 700;
+  text-decoration: inherit;
+}
+
+/* Even out wrapped lines; inline-block so each line group balances on its own. */
+.papertitle,
+.authors,
+.venue {
+  display: inline-block;
+  text-wrap: balance;
 }
 
 .name {
@@ -801,7 +810,7 @@ body { color: var(--text-color); }
 
 /* Fade underlines without moving text or changing paragraph wrapping. */
 p a:not(.contact-link):not(.resource-link),
-.research-copy > a:not(.resource-link) {
+.research-copy a:not(.resource-link) {
   text-decoration-line: underline;
   text-decoration-color: transparent;
   text-decoration-thickness: 1px;
@@ -810,7 +819,7 @@ p a:not(.contact-link):not(.resource-link),
 }
 
 p a:not(.contact-link):not(.resource-link):focus-visible,
-.research-copy > a:not(.resource-link):focus-visible {
+.research-copy a:not(.resource-link):focus-visible {
   text-decoration-color: currentColor;
 }
 
@@ -826,7 +835,7 @@ p a:not(.contact-link):not(.resource-link):focus-visible,
   .previously summary:hover { color: var(--link-hover-color); }
 
   p a:not(.contact-link):not(.resource-link):hover,
-  .research-copy > a:not(.resource-link):hover {
+  .research-copy a:not(.resource-link):hover {
     text-decoration-color: currentColor;
   }
 }
