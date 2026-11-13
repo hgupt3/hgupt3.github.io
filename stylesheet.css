@@ -386,6 +386,12 @@ h2 {
 }
 
 /* Even out wrapped lines; inline-block so each line group balances on its own. */
+.award {
+  color: #cc5500;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
 .papertitle,
 .authors,
 .venue {
